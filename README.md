@@ -5,7 +5,7 @@ Java及其相关漏洞学习代码和笔记
 - [x] 基础学习
 - [x] Java反射
 - [x] Java反序列化
-- [ ] IDEA调试技巧（today）
+- [x] IDEA调试技巧（today）
 - [ ] 动态代理机制（today）
 - [ ] Java RMI基础及攻击方式（today）
 - [ ] JNDI注入（today）
