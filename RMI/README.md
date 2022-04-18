@@ -99,3 +99,27 @@ public class Client {
 
 ![image-20220417182810769](README.assets/image-20220417182810769.png)
 
+### 反序列化攻击RMI
+
+反序列化攻击RMI的前提
+1. RMI服务器端提供了接受Object参数的远程方法
+2. RMI服务器端存在POP利用链的jar包
+
+如果RMI的server端注册了对象到注册表，则可能存在一些危险对象出现可控的写文件，执行命令的操作，通过远程调用这个方法外加反序列化的方式可以完成攻击
+
+[BaRMIe](https://github.com/NickstaDB/BaRMIe)利用list()暴力破解的方式，列出远程所有注册的远程对象
+
+RMI本质就是动态类的加载，如果当前JVM中没有某个类的定义，可以通过远程URL去下载这个类的class，如果可以控制客户端加载类的地点，可以让客户端加载恶意代码，从而完成攻击的目的，RMI动态类加载两种方式，分别是JNDI和codebase
+
+### codebase安全问题
+动态加载类从远程URL加载，通过java.rmi.server.codebase属性指定
+```java
+System.setProperty("java.rmi.server.codebase", "http://127.0.0.1:8000/");
+// 当本地找不到com.bcyx.hello的时候则会去http://127.0.0.1:8000/com/bcyx/hello.class
+// 去对应URL下载类文件
+```
+服务端可以指定codebase，当服务端利用代码设置codebase的时，则会加载对应的类文件，利用的前提条件为：
+1. 由于Java SecurityManager的限制，默认是不允许远程加载的，如果远程加载，需要安装RMISecurityManager并且配置java.security.policy
+2. 属性java.rmi.server.useCodebaseOnly的值为false，但是从JDK6u45、7u21开始，默认为true了，true将禁用自动加载远程类文件，从classpath和当前server指定的codebase加载
+
+

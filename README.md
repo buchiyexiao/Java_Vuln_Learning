@@ -7,8 +7,9 @@ Java及其相关漏洞学习代码和笔记
 - [x] Java反序列化
 - [x] IDEA调试技巧
 - [x] 动态代理机制
-- [ ] Java RMI基础及攻击方式（today）
-- [ ] JNDI注入（today）
+- [x] Java RMI基础及攻击方式
+- [x] Java RMI漏洞复现
+- [ ] JNDI注入
 - [ ] fastjson反序列化复现
 - [ ] 类的加载机制和恶意类的构造
 - [ ] shiro反序列化复现
