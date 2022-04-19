@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7e5370a-402b-4364-a29b-aae969ac54e9" name="默认变更列表" comment="" />
+    <list default="true" id="70144613-613c-4cf6-b1af-7a1d8c45e68c" name="默认变更列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="27xvzNrHdJdTm2Vsn6Z3YDIKie2" />
+  <component name="ProjectId" id="280fyKQ7fn6BdPuc8kd4JMbhUOz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,51 +30,42 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="项目" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="server.Server" />
-      <module name="cve-2017-3241" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Demo" />
+      <module name="example" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Server" />
+        <item itemvalue="应用程序.Demo" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="d7e5370a-402b-4364-a29b-aae969ac54e9" name="默认变更列表" comment="" />
-      <created>1650274815825</created>
+      <changelist id="70144613-613c-4cf6-b1af-7a1d8c45e68c" name="默认变更列表" comment="" />
+      <created>1650358679981</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1650274815825</updated>
-      <workItem from="1650274817049" duration="76000" />
-      <workItem from="1650277171360" duration="1043000" />
-      <workItem from="1650280096126" duration="223000" />
-      <workItem from="1650280799637" duration="753000" />
-      <workItem from="1650282380447" duration="1284000" />
-      <workItem from="1650286439537" duration="354000" />
-      <workItem from="1650286902780" duration="43000" />
-      <workItem from="1650355371518" duration="1072000" />
-      <workItem from="1650358620323" duration="59000" />
+      <updated>1650358679981</updated>
+      <workItem from="1650358681507" duration="1007000" />
     </task>
     <servers />
   </component>
@@ -83,10 +82,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

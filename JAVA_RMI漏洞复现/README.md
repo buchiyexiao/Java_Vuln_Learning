@@ -91,7 +91,9 @@ public interface ICombine extends Remote{
 ### 复现
 
 利用Server的代码进行本地环境复现，需要提前准备ysoserial，IDEA+Maven
+
 出现了两个bug，FileUpload1快速添加import class，然后修改对应函数null为(File) null，Jypthon1删掉
+
 绕了很多弯路，看到了这篇文章后半部分才配置好(ysoserial)[https://www.cnblogs.com/gychomie/p/14406399.html]
 
 服务器上运行对应的vulhub
