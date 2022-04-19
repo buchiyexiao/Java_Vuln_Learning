@@ -9,8 +9,9 @@ Java及其相关漏洞学习代码和笔记
 - [x] 动态代理机制
 - [x] Java RMI基础及攻击方式
 - [x] Java RMI漏洞复现
-- [ ] JNDI基础和使用 today
-- [ ] 类的加载机制和恶意类的构造 today
+- [x] JNDI基础和使用
+- [ ] static静态代码块
+- [ ] 类的加载机制和恶意类的构造
 - [ ] JMX安全问题 
 - [ ] Gadget寻找
 - [ ] log4j2 JNDI复现
