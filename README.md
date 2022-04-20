@@ -13,7 +13,7 @@ Java及其相关漏洞学习代码和笔记
 - [x] static静态代码块
 - [x] 类的加载机制和恶意类的构造
 - [x] JMX安全问题
-- [ ] Apache Solr复现
+- [x] Apache Solr复现
 - [ ] Gadget寻找
 - [ ] log4j2 JNDI复现
 - [ ] fastjson反序列化复现
