@@ -13,8 +13,8 @@ Java及其相关漏洞学习代码和笔记
 - [x] [static静态代码块](./static静态代码块/README.md)
 - [x] [类的加载机制和恶意类的构造](./类的加载机制/README.md)
 - [x] [JMX安全问题](./JMX/README.md)
-- [x] [Java常用命令执行的方式](./JAVA常见命令执行/README.md)
-- [ ] shiro550反序列化
+- [x] [Java常用命令执行的方式](./JAVA常见命令执行/README.md) today
+- [ ] [shiro反序列化](./shiro反序列化/README.md) today
 - [ ] URLDNS反序列化
 - [ ] XMLDecoder反序列化
 - [ ] Mqsql-JDBC反序列化
