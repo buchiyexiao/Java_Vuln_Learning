@@ -29,6 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="F:/Java/shiro-shiro-root-1.2.4/shiro-shiro-root-1.2.4/samples/web" />
   </component>
   <component name="RunManager" selected="应用程序.proimpltest">
     <configuration name="exectest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -52,17 +53,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.proimpltest" />
@@ -80,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650526047619</updated>
       <workItem from="1650526048948" duration="1407000" />
+      <workItem from="1650869359992" duration="20000" />
     </task>
     <servers />
   </component>
@@ -96,5 +87,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
