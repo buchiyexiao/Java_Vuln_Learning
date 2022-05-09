@@ -6,182 +6,51 @@ github上下载shiro1.2.4版本，[下载链接](https://github.com/apache/shiro
 
 打开samples\web目录项目
 
-替换pom
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Licensed to the Apache Software Foundation (ASF) under one
-  ~ or more contributor license agreements.  See the NOTICE file
-  ~ distributed with this work for additional information
-  ~ regarding copyright ownership.  The ASF licenses this file
-  ~ to you under the Apache License, Version 2.0 (the
-  ~ "License"); you may not use this file except in compliance
-  ~ with the License.  You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing,
-  ~ software distributed under the License is distributed on an
-  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  ~ KIND, either express or implied.  See the License for the
-  ~ specific language governing permissions and limitations
-  ~ under the License.
-  -->
-<!--suppress osmorcNonOsgiMavenDependency -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
- 
-    <parent>
-        <groupId>org.apache.shiro.samples</groupId>
-        <artifactId>shiro-samples</artifactId>
-        <version>1.2.4</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
- 
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>samples-web</artifactId>
-    <name>Apache Shiro :: Samples :: Web</name>
-    <packaging>war</packaging>
- 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>1.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>toolchain</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>1.7</version>
-                            <vendor>sun</vendor>
-                        </jdk>
-                    </toolchains>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <forkMode>never</forkMode>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>${jetty.version}</version>
-                <configuration>
-                    <contextPath>/</contextPath>
-                    <connectors>
-                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>9080</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
-                    <requestLog implementation="org.mortbay.jetty.NCSARequestLog">
-                        <filename>./target/yyyy_mm_dd.request.log</filename>
-                        <retainDays>90</retainDays>
-                        <append>true</append>
-                        <extended>false</extended>
-                        <logTimeZone>GMT</logTimeZone>
-                    </requestLog>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
- 
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.htmlunit</groupId>
-            <artifactId>htmlunit</artifactId>
-            <version>2.6</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-2.1-jetty</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
- 
-</project>
-```
-
-以上为JDK1.7的pom，不更改POM也可以直接使用原版，但是原版toolchain锁定为1.6，需要去maven配置更改jdk
+替换pom文件，并将版本设定为JDK1.6，如果和网上其他的更改为1.7+的话，可能会出现很多问题，很多包都需要连锁去改，比较麻烦，最后mvn生成的target的war文件拷贝到tomcat的webapp中，更改一下名字直接访问对应端口
 
 > mvn package -D maven.skip.test=true
 
-编译遇到的坑，需要在用户名/.m2目录下新建一个toolchains.xml
+```
+<!--  需要设置编译的版本 -->  
+    <properties>
+       <maven.compiler.source>1.6</maven.compiler.source>
+       <maven.compiler.target>1.6</maven.compiler.target>
+   </properties>
+...
+   <dependencies>
+       <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>jstl</artifactId>
+           <!--  这里需要将jstl设置为1.2 -->
+           <version>1.2</version> 
+           <scope>runtime</scope>
+       </dependency>
+.....
+       <dependency>
+           <groupId>org.apache.commons</groupId>
+           <artifactId>commons-collections4</artifactId>
+           <version>4.0</version>
+       </dependency>
+<dependencies>         
+```
 
-```
-<toolchain>
-    <type>jdk</type>
-    <provides>
-        <version>1.6</version>
-        <vendor>sun</vendor>
-    </provides>
-    <configuration>
-        <jdkHome>C:\Program Files\Java\jdk1.6.0_45</jdkHome>
-    </configuration>
-</toolchain>
-```
+### 漏洞复现
+
+抓到响应包存在set-cookie:rememberMe参数
+
+![image-20220509144552819](README.assets/image-20220509144552819.png)
+
+remeberMe这个位置可能存在反序列化漏洞
+
+利用ysosrial生成poc
+
+> java -jar ysoserial.jar CommonsCollections2 "calc" > poc.txt
+
+同时根据issue可以找到对应的AbstractRememberMeManager中密钥
+
+![image-20220509145922612](README.assets/image-20220509145922612.png)
+
+乏了，这个破玩意问题好多，不想复现了，环境太难配置了，直接vulnhub
 
 
 
