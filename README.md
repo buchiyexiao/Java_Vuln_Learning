@@ -1,8 +1,14 @@
 # Java_Vuln_Learning
 Java及其相关漏洞学习代码和笔记
+
+# Base Lists
+
+- [ ] [Java基础](./JAVA基础/README.md)
+- [ ] 
+
 # TODO Lists
 
-- [x] [基础学习](./基础学习/README.md)
+- [x] [Java安全相关知识](./安全相关知识/README.md)
 - [x] [Java反射](./JAVA反射/README.md)
 - [x] [Java反序列化](./JAVA反序列化/README.md)
 - [x] [IDEA调试技巧](./IDEA调试技巧/README.md)
